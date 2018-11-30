@@ -16,7 +16,7 @@ if [[ $? -ne 0 ]]; then
   exit 0
 fi
 
-git diff ${ref} --name-only | grep -qw "^${folder}"
+git diff ${ref} --name-only | grep -w "^${folder}"
 changes=$?
 if [[ ${changes} -eq 0 ]]; then
   echo "Folder '${folder}' has changed."
